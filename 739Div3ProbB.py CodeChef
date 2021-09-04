@@ -1,0 +1,87 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+def circle(a):
+    if a[0]>a[1]:
+        temp=a[0]
+        a[0]=a[1]
+        a[1]=temp
+    left=abs(a[1]-a[0]-1)
+    if left ==0:
+       # print(-1)
+        return -1
+    else:
+        for i in range(a[0],a[1]-1):
+            le.append(i+1)
+    
+    s=a[0]
+    count=0
+    while s!=1:
+        count=count+1
+        s=s-1
+        b.append(s)
+    #print(count)
+    b.sort()
+    
+    if len(b) > len(le):
+       # print(-1)
+        return -1
+
+    right=count
+    while right!=left:
+        right=right+1
+        
+    
+    #print(right)
+    
+    count=right-count
+    #print(count)
+    lar=a[1]
+    
+    for i in range(0,count):
+        lar=lar+1
+        ri.append(lar)
+    
+    for i in range(0,len(b)):
+        ri.append(b[i])
+
+    #print(a)
+    
+    if a[2] not in le and a[2] not in ri:
+       # print(-1)
+        return -1
+    
+    if a[2] in le:
+        for i in range(0,len(le)):
+            if a[2]==le[i]:
+                return ri[i]
+    
+    else:
+        for i in range(0,len(ri)):
+            if a[2]==ri[i]:
+                return le[i]
+                
+    if len(le) == 0 or len(ri) == 0:
+       # print(-1)
+        return -1
+        
+        
+a=[]
+le=[]
+ri=[]
+b=[]
+final=[]
+t=int(input())
+for i in range(t):
+    a=list(map(int,input().split()))
+    f=circle(a)
+    final.append(f)
+    ri.clear()
+    le.clear()
+    b.clear()
+
+for i in range(0,len(final)):
+    print(final[i])
